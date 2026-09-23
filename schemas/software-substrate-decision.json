@@ -227,6 +227,8 @@
         "autonomyDemand",
         "environmentalCapacity",
         "capacityKnown",
+        "repairPathVerified",
+        "supervisionAvailable",
         "tightenedConstraints",
         "supervision",
         "rationale"
@@ -242,6 +244,12 @@
           "minimum": 0
         },
         "capacityKnown": {
+          "type": "boolean"
+        },
+        "repairPathVerified": {
+          "type": "boolean"
+        },
+        "supervisionAvailable": {
           "type": "boolean"
         },
         "tightenedConstraints": {
