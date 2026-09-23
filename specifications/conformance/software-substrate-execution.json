@@ -3016,6 +3016,34 @@
         "operation": "set",
         "value": "true"
       }
+    },
+    {
+      "id": "J25-false-repair-path-verified",
+      "expect": {
+        "schemaValid": true
+      },
+      "mutation": {
+        "path": [
+          "result",
+          "repairPathVerified"
+        ],
+        "operation": "set",
+        "value": false
+      }
+    },
+    {
+      "id": "J26-false-supervision-available",
+      "expect": {
+        "schemaValid": true
+      },
+      "mutation": {
+        "path": [
+          "result",
+          "supervisionAvailable"
+        ],
+        "operation": "set",
+        "value": false
+      }
     }
   ]
 }
