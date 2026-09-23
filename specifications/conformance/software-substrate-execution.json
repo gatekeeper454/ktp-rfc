@@ -60,6 +60,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -136,6 +138,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -210,6 +214,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -284,6 +290,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -353,6 +361,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": false,
@@ -422,6 +432,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -491,6 +503,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": false,
             "destinationMatches": true,
@@ -560,6 +574,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -629,6 +645,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -698,6 +716,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -767,6 +787,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -836,6 +858,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": false,
             "requestMatches": true,
             "destinationMatches": true,
@@ -905,6 +929,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -974,6 +1000,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -1043,6 +1071,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -1112,6 +1142,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -1181,6 +1213,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -1250,6 +1284,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -1319,6 +1355,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -1388,6 +1426,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -1457,6 +1497,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": false,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -1526,6 +1568,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -1596,6 +1640,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -1666,6 +1712,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -1735,6 +1783,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -1804,6 +1854,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -1873,6 +1925,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -1942,6 +1996,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -2016,6 +2072,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -2085,6 +2143,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -2155,6 +2215,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -2224,6 +2286,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -2293,6 +2357,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -2369,6 +2435,8 @@
           },
           "trustedFixtures": {
             "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
             "signatureVerified": true,
             "requestMatches": true,
             "destinationMatches": true,
@@ -2400,6 +2468,158 @@
         "environmentalCapacityNotGreaterThanCompared": true,
         "decisionNotLooserThan": "escalate",
         "supervisionAtLeast": "regulated"
+      }
+    },
+    {
+      "id": "S35-repair-path-unverified",
+      "note": "Modeled withholding result when the repair path is unverified; this does not assert a live repair, target effect, or human supervision.",
+      "request": {
+        "resource": "software:///test-object",
+        "action": "replace",
+        "softwareContext": {
+          "magnitudes": {
+            "effectBytes": 1024,
+            "affectedObjects": 1,
+            "fanoutTargets": 1
+          },
+          "conditions": {
+            "resourcePressure": 0.1,
+            "controlLatencyMs": 10,
+            "irreversibility": 0.1,
+            "novelty": 0
+          },
+          "nowMs": 100000,
+          "observedAtMs": 99500,
+          "maxAgeMs": 1000,
+          "proofIssuedAtMs": 99000,
+          "proofExpiresAtMs": 109000,
+          "decisionExpiresAtMs": 100500,
+          "candidateEnvelope": {
+            "autonomyDemand": 0.2,
+            "environmentalCapacity": 1.0,
+            "capacityKnown": true,
+            "supervision": "stable",
+            "ceilings": {
+              "effectBytes": 1024,
+              "affectedObjects": 1,
+              "fanoutTargets": 1
+            }
+          },
+          "existingSupervision": "stable",
+          "existingCeilings": {
+            "effectBytes": 1024,
+            "affectedObjects": 1,
+            "fanoutTargets": 1
+          },
+          "trustedFixtures": {
+            "ordinaryAuthorization": true,
+            "repairPathVerified": false,
+            "supervisionAvailable": true,
+            "signatureVerified": true,
+            "requestMatches": true,
+            "destinationMatches": true,
+            "authorityClassMatches": true,
+            "proofMatches": true,
+            "profileMatches": true,
+            "policyMatches": true,
+            "evidenceMatches": true,
+            "prerequisitesCurrent": true,
+            "epochCurrent": true,
+            "sourceAuthenticated": true,
+            "sourceHealthy": true,
+            "sequenceCurrent": true,
+            "trustedTime": true,
+            "restrictionContinuity": true,
+            "unresolvedRestriction": false,
+            "revoked": false,
+            "scaleMatches": true
+          }
+        }
+      },
+      "expect": {
+        "decision": "deny",
+        "supervision": "silent_veto",
+        "tightenedAtMost": {
+          "effectBytes": 0,
+          "affectedObjects": 0,
+          "fanoutTargets": 0
+        }
+      }
+    },
+    {
+      "id": "S36-supervision-unavailable",
+      "note": "Modeled withholding result when supervision is unavailable; this does not assert a live repair, target effect, or human supervision.",
+      "request": {
+        "resource": "software:///test-object",
+        "action": "replace",
+        "softwareContext": {
+          "magnitudes": {
+            "effectBytes": 1024,
+            "affectedObjects": 1,
+            "fanoutTargets": 1
+          },
+          "conditions": {
+            "resourcePressure": 0.1,
+            "controlLatencyMs": 10,
+            "irreversibility": 0.1,
+            "novelty": 0
+          },
+          "nowMs": 100000,
+          "observedAtMs": 99500,
+          "maxAgeMs": 1000,
+          "proofIssuedAtMs": 99000,
+          "proofExpiresAtMs": 109000,
+          "decisionExpiresAtMs": 100500,
+          "candidateEnvelope": {
+            "autonomyDemand": 0.2,
+            "environmentalCapacity": 1.0,
+            "capacityKnown": true,
+            "supervision": "stable",
+            "ceilings": {
+              "effectBytes": 1024,
+              "affectedObjects": 1,
+              "fanoutTargets": 1
+            }
+          },
+          "existingSupervision": "stable",
+          "existingCeilings": {
+            "effectBytes": 1024,
+            "affectedObjects": 1,
+            "fanoutTargets": 1
+          },
+          "trustedFixtures": {
+            "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": false,
+            "signatureVerified": true,
+            "requestMatches": true,
+            "destinationMatches": true,
+            "authorityClassMatches": true,
+            "proofMatches": true,
+            "profileMatches": true,
+            "policyMatches": true,
+            "evidenceMatches": true,
+            "prerequisitesCurrent": true,
+            "epochCurrent": true,
+            "sourceAuthenticated": true,
+            "sourceHealthy": true,
+            "sequenceCurrent": true,
+            "trustedTime": true,
+            "restrictionContinuity": true,
+            "unresolvedRestriction": false,
+            "revoked": false,
+            "scaleMatches": true
+          }
+        }
+      },
+      "expect": {
+        "decision": "deny",
+        "supervision": "silent_veto",
+        "tightenedAtMost": {
+          "effectBytes": 0,
+          "affectedObjects": 0,
+          "fanoutTargets": 0
+        }
       }
     }
   ],
@@ -2753,6 +2973,48 @@
         ],
         "operation": "remove",
         "value": null
+      }
+    },
+    {
+      "id": "J22-string-repair-path-verified",
+      "expect": {
+        "schemaValid": false
+      },
+      "mutation": {
+        "path": [
+          "result",
+          "repairPathVerified"
+        ],
+        "operation": "set",
+        "value": "true"
+      }
+    },
+    {
+      "id": "J23-missing-supervision-available",
+      "expect": {
+        "schemaValid": false
+      },
+      "mutation": {
+        "path": [
+          "result",
+          "supervisionAvailable"
+        ],
+        "operation": "remove",
+        "value": null
+      }
+    },
+    {
+      "id": "J24-string-supervision-available",
+      "expect": {
+        "schemaValid": false
+      },
+      "mutation": {
+        "path": [
+          "result",
+          "supervisionAvailable"
+        ],
+        "operation": "set",
+        "value": "true"
       }
     }
   ]
