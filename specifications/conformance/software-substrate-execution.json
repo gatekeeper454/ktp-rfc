@@ -2432,6 +2432,7 @@
       "environmentalCapacity": 1,
       "margin": 0.8,
       "capacityKnown": true,
+      "repairPathVerified": true,
       "tightenedConstraints": {
         "profile": "software-substrate-execution",
         "ceilings": [
@@ -2737,6 +2738,20 @@
         ],
         "operation": "set",
         "value": 9007199254740992
+      }
+    },
+    {
+      "id": "J21-missing-repair-path-verified",
+      "expect": {
+        "schemaValid": false
+      },
+      "mutation": {
+        "path": [
+          "result",
+          "repairPathVerified"
+        ],
+        "operation": "remove",
+        "value": null
       }
     }
   ]
