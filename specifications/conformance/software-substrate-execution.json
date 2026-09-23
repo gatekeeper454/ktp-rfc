@@ -2472,10 +2472,10 @@
     },
     {
       "id": "S35-repair-path-unverified",
-      "note": "Modeled withholding result when the repair path is unverified; this does not assert a live repair, target effect, or human supervision.",
+      "note": "Modeled withholding result for this repair action when the repair path is unverified; this does not assert a live repair, target effect, or human supervision.",
       "request": {
         "resource": "software:///test-object",
-        "action": "replace",
+        "action": "repair",
         "softwareContext": {
           "magnitudes": {
             "effectBytes": 1024,
