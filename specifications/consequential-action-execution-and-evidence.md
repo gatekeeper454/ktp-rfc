@@ -1,0 +1,56 @@
+# Consequential-action execution and evidence
+
+**Status: proposal; not adopted or released.** Decision: [#129](https://github.com/nmcitra/ktp-rfc/issues/129), D-011. Release baseline: **KTP `v2.1.0`**. This is an additive, opt-in contract. It has no independent release number, tag, or DOI, and it makes no change to KTP core. Published 2026-09-18 · MINOR · floor 2026-10-09 · review-by 2026-10-30.
+
+The key words "MUST", "MUST NOT", "REQUIRED", "SHOULD", "SHOULD NOT", and "MAY" are to be interpreted as described in BCP 14 (RFC 2119 and RFC 8174).
+
+## Scope and dependencies
+
+This proposal defines execution-time constraints for a consequential action after an installed policy has produced a signed consumption decision. It defines neither an authorization formula nor a way to calculate capacity, supervision, readiness, or consumption. A consumer MUST consume the complete signed consumption decision produced under [#124](https://github.com/nmcitra/ktp-rfc/issues/124); it MUST NOT rederive, replace, widen, or duplicate any #124 calculation.
+
+The #124 profile and its decision binding are not adopted at the `v2.1.0` baseline. Final binding in this proposal is therefore gated on the disposition of [#122](https://github.com/nmcitra/ktp-rfc/pull/122) and #124. Until both gates clear, this document is a proposal and a vector or schema result under it MUST NOT be represented as a released KTP execution contract.
+
+This proposal does not prescribe storage, a target product, KAG, KIL, a queue, a gateway, or a reconciliation implementation. KAG is a future implementation path.
+
+## Release contract
+
+Before releasing a consequential action, an enforcer MUST use trusted context to revalidate the signed consumption decision against the actual action about to be released. This revalidation MUST bind the actual target or destination, resolved operation class, complete ordinary proof, request identity, installed policy/profile revisions, and every other binding required by the consumed decision. Candidate-supplied identifiers, a prior routing result, or a copied decision digest are insufficient.
+
+The enforcer MUST release only the action and destination that the consumed decision binds. A redirect, target substitution, resolution change, parameter expansion, or loss of a required current-state observation is a new candidate and MUST be withheld until it receives a fresh applicable decision. A signed consumption decision is not a standalone permission and does not remove any existing proof, veto, supervision, capacity, or target constraint.
+
+## Replay and retry contract
+
+Each consequential request MUST have a durable request identity and a canonical fingerprint of the complete release-relevant request. The identity and fingerprint MUST survive process restart, retry, failover, and reconciliation. A repeated request with the same identity and a different canonical body MUST be rejected; an implementation MUST NOT treat it as a retry, rewrite the stored body, or issue a second release.
+
+A retry MUST use the same durable identity, canonical fingerprint, target/destination binding, and consumed decision binding. A retry that cannot establish those equalities is a new candidate and MUST be withheld pending fresh evaluation. Retrying an uncertain outcome MUST NOT presume either non-dispatch or effect confirmation.
+
+## Effect-budget contract
+
+Where a deployment declares a shared effect budget, the enforcer MUST make a conservative reservation before release and MUST read sufficiently current shared budget state before accepting the reservation. The capacity read and reservation MUST bind the same budget scope, action scope, and actual target/destination as the action being released. An unavailable, stale, ambiguous, conflicting, or insufficient capacity read MUST withhold the action.
+
+Reservations MUST remain durable until they are reconciled to a restrictive outcome. An implementation MUST NOT double-spend a reservation through concurrent requests, retries, restart, failover, or a changed request body. This contract does not define a budget formula, storage system, coordination protocol, or a shared-load scalar in #124.
+
+## Evidence contract
+
+For this contract, the only execution/effect evidence states are `withheld`, `dispatched`, `effect_confirmed`, and `unknown`.
+
+- `withheld` means the release gate did not permit dispatch.
+- `dispatched` means the enforcer has evidence that it sent the bound action to the bound target or destination; it does not prove an effect.
+- `effect_confirmed` means trusted evidence confirms the bound effect at the bound target or destination.
+- `unknown` means the available evidence cannot establish the restrictive conclusion required to classify the outcome as withheld, dispatched, or effect confirmed.
+
+A denial, a timeout, a transport exception, or an HTTP status is insufficient by itself to prove non-dispatch or non-effect. A successful HTTP status is likewise insufficient by itself to prove the bound effect. The evidence record MUST retain the durable request identity, canonical fingerprint, consumed decision binding, actual target/destination binding, reservation reference where applicable, observed evidence, and its state.
+
+Reconciliation MUST run across restart, retry, failover, and restoration. It MUST preserve the evidence state and any unresolved reservation, query or otherwise obtain the deployment's trusted evidence where available, and resolve uncertainty conservatively. Reconciliation MUST NOT erase an `unknown` outcome, release a conflicting retry, or infer a target effect from a decision, a denial, or an HTTP status alone.
+
+## Deterministic vectors and conformance boundary
+
+The eventual conformance suite MUST contain deterministic fixtures for release-time revalidation, changed-body rejection, retry identity preservation, conservative shared reservation, unavailable capacity state, each of the four evidence states, and restart reconciliation. A vector runner MAY validate declared fixture shape and the stated expected properties. It MUST NOT claim to execute a real target, prove a real-world effect, or establish runtime certification.
+
+Passing every released vector means only that an implementation satisfies the explicit expectations of those vectors. It does not certify a target product, a deployment, an effect-budget backend, KAG, KIL, or any runtime environment. A vector suite or schema is not released merely because this proposal names it.
+
+## Compatibility and provenance (informative)
+
+This proposal is additive and opt-in. Existing `v2.1.0` conformant implementations remain conformant without it. Adoption requires a separately approved release that identifies its exact specification, schema, and vector revisions; this proposal does not change a KTP release, DOI, or core contract.
+
+The [KIL evidence gate #130](https://github.com/nmcitra/ktp-rfc/issues/130) is independent. It concerns an accessible, pinned, reproducible release and evidence boundary; it does not adopt this proposal or turn any implementation into a reference implementation. Provenance for an eventual implementation, vector suite, and release belongs in their separately published records.
