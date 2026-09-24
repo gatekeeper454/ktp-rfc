@@ -1,0 +1,109 @@
+{
+  "schemaFixtureNote": "Synthetic shape-only fixture. Digest strings and JWS segments are placeholders, not verified digests, a valid signature, authenticated observation, authorization, non-dispatch coverage, or actual target effect. It must never be used as authority. schemaVectors apply each isolated mutation to a fresh copy; omitted mutation means unchanged.",
+  "schemaFixture": {
+    "artifact_type": "ktp-consequential-action-evidence-v1",
+    "request_id": "test-request-001",
+    "operation_fingerprint_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "consumption_decision_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "reservation_reference": "test-reservation-001",
+    "reservation_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "evidence_state": "withheld",
+    "observation": {
+      "source_id": "test-observation-source",
+      "protected_path_coverage": "test-protected-path",
+      "interval_start": 100,
+      "interval_end": 101,
+      "provenance_digest": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+    },
+    "target_marker": "target-effect:test-marker",
+    "recorder_evidence_digest": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "signature": "YQ.Yg.Yw"
+  },
+  "schemaVectors": [
+    {
+      "id": "J01-shape",
+      "expect": {
+        "schemaValid": true
+      }
+    },
+    {
+      "id": "J02-missing-evidence-state",
+      "expect": {
+        "schemaValid": false
+      },
+      "mutation": {
+        "path": [
+          "evidence_state"
+        ],
+        "operation": "remove",
+        "value": null
+      }
+    },
+    {
+      "id": "J03-invalid-evidence-state",
+      "expect": {
+        "schemaValid": false
+      },
+      "mutation": {
+        "path": [
+          "evidence_state"
+        ],
+        "operation": "set",
+        "value": "denied"
+      }
+    },
+    {
+      "id": "J04-missing-observation-source",
+      "expect": {
+        "schemaValid": false
+      },
+      "mutation": {
+        "path": [
+          "observation",
+          "source_id"
+        ],
+        "operation": "remove",
+        "value": null
+      }
+    },
+    {
+      "id": "J05-extra-root",
+      "expect": {
+        "schemaValid": false
+      },
+      "mutation": {
+        "path": [
+          "extra"
+        ],
+        "operation": "set",
+        "value": 1
+      }
+    },
+    {
+      "id": "J06-http-status-marker",
+      "expect": {
+        "schemaValid": false
+      },
+      "mutation": {
+        "path": [
+          "target_marker"
+        ],
+        "operation": "set",
+        "value": "http-status:200"
+      }
+    },
+    {
+      "id": "J07-malformed-signature",
+      "expect": {
+        "schemaValid": false
+      },
+      "mutation": {
+        "path": [
+          "signature"
+        ],
+        "operation": "set",
+        "value": "not-a-jws"
+      }
+    }
+  ]
+}
