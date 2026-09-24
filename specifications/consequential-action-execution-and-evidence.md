@@ -16,6 +16,8 @@ This proposal does not prescribe storage, a target product, KAG, KIL, a queue, a
 
 Before releasing a consequential action, an enforcer MUST use trusted context to revalidate the signed consumption decision against the actual action about to be released. This revalidation MUST bind the actual target or destination, resolved operation class, complete ordinary proof, request identity, installed policy/profile revisions, and every other binding required by the consumed decision. Candidate-supplied identifiers, a prior routing result, or a copied decision digest are insufficient.
 
+Immediately before release, the enforcer MUST revalidate the complete ordinary authorization, installed profile restrictions, required trusted current state, and every required observation; decision binding alone is insufficient. A stale, missing, unavailable, unauthenticated, or conflicting required observation or current-state result MUST withhold the action. This requirement applies even when the signed consumption decision has not expired.
+
 The enforcer MUST release only the action and destination that the consumed decision binds. A redirect, target substitution, resolution change, parameter expansion, or loss of a required current-state observation is a new candidate and MUST be withheld until it receives a fresh applicable decision. A signed consumption decision is not a standalone permission and does not remove any existing proof, veto, supervision, capacity, or target constraint.
 
 ## Replay and retry contract
@@ -26,20 +28,20 @@ A retry MUST use the same durable identity, canonical fingerprint, target/destin
 
 ## Effect-budget contract
 
-Where a deployment declares a shared effect budget, the enforcer MUST make a conservative reservation before release and MUST read sufficiently current shared budget state before accepting the reservation. The capacity read and reservation MUST bind the same budget scope, action scope, and actual target/destination as the action being released. An unavailable, stale, ambiguous, conflicting, or insufficient capacity read MUST withhold the action.
+Where a deployment declares a shared effect budget, it MUST declare consequence units and scoped maxima for each budget scope. Before release, the enforcer MUST make a conservative reservation and MUST read sufficiently current shared budget state before accepting that reservation. The capacity read and reservation MUST bind the same declared consequence units, scoped maxima, budget scope, action scope, and actual target/destination as the action being released. An unavailable, stale, ambiguous, conflicting, or insufficient capacity read MUST withhold the action.
 
-Reservations MUST remain durable until they are reconciled to a restrictive outcome. An implementation MUST NOT double-spend a reservation through concurrent requests, retries, restart, failover, or a changed request body. This contract does not define a budget formula, storage system, coordination protocol, or a shared-load scalar in #124.
+Aggregate reservation authority MUST atomically apply a reservation against the shared limit across every actor, resource, and replica in the declared budget scope. Distinct request, actor, resource, or replica identities MUST NOT evade a shared limit. Reservations MUST remain durable until they are reconciled to a restrictive outcome. An implementation MUST NOT double-spend a reservation through concurrent requests, retries, restart, failover, or a changed request body. This contract defines this atomicity requirement but does not define a budget formula, storage system, coordination protocol, or a shared-load scalar in #124.
 
 ## Evidence contract
 
 For this contract, the only execution/effect evidence states are `withheld`, `dispatched`, `effect_confirmed`, and `unknown`.
 
-- `withheld` means the release gate did not permit dispatch.
+- `withheld` means authenticated protected-path non-dispatch evidence establishes that the bound action was not dispatched during a stated interval. That evidence MUST identify its source, protected-path coverage, interval, and provenance.
 - `dispatched` means the enforcer has evidence that it sent the bound action to the bound target or destination; it does not prove an effect.
 - `effect_confirmed` means trusted evidence confirms the bound effect at the bound target or destination.
 - `unknown` means the available evidence cannot establish the restrictive conclusion required to classify the outcome as withheld, dispatched, or effect confirmed.
 
-A denial, a timeout, a transport exception, or an HTTP status is insufficient by itself to prove non-dispatch or non-effect. A successful HTTP status is likewise insufficient by itself to prove the bound effect. The evidence record MUST retain the durable request identity, canonical fingerprint, consumed decision binding, actual target/destination binding, reservation reference where applicable, observed evidence, and its state.
+A denial alone, a timeout, a transport exception, or an HTTP status is insufficient by itself to prove non-dispatch or non-effect. Without the authenticated protected-path non-dispatch evidence required for `withheld`, a denial outcome MUST be `unknown`. A successful HTTP status is likewise insufficient by itself to prove the bound effect. The evidence record MUST retain the durable request identity, canonical fingerprint, consumed decision binding, actual target/destination binding, reservation reference where applicable, observed evidence, its source, coverage, interval, provenance, and its state.
 
 Reconciliation MUST run across restart, retry, failover, and restoration. It MUST preserve the evidence state and any unresolved reservation, query or otherwise obtain the deployment's trusted evidence where available, and resolve uncertainty conservatively. Reconciliation MUST NOT erase an `unknown` outcome, release a conflicting retry, or infer a target effect from a decision, a denial, or an HTTP status alone.
 
