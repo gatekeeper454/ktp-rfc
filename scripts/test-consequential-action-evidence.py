@@ -25,11 +25,14 @@ VALIDATOR = Draft202012Validator(SCHEMA)
 
 def apply_mutation(value, mutation):
     """Apply one isolated schema-vector mutation to a JSON-compatible value."""
+    operation = mutation["operation"]
+    if operation not in {"set", "remove"}:
+        raise ValueError(f"unsupported mutation operation: {operation}")
     target = value
     for member in mutation["path"][:-1]:
         target = target[member]
     leaf = mutation["path"][-1]
-    if mutation["operation"] == "set":
+    if operation == "set":
         target[leaf] = mutation["value"]
     else:
         del target[leaf]
@@ -45,9 +48,18 @@ class ConsequentialActionEvidenceTests(unittest.TestCase):
                 candidate = copy.deepcopy(SUITE["schemaFixture"])
                 if "mutation" in vector:
                     apply_mutation(candidate, vector["mutation"])
+                for mutation in vector.get("mutations", []):
+                    apply_mutation(candidate, mutation)
                 actual = VALIDATOR.is_valid(candidate)
                 expected = vector["expect"]["schemaValid"]
                 self.assertEqual(actual, expected, vector["id"])
+
+    def test_rejects_unsupported_mutation_operations(self):
+        for vector in SUITE["mutationValidationVectors"]:
+            with self.subTest(vector=vector["id"]):
+                candidate = copy.deepcopy(SUITE["schemaFixture"])
+                with self.assertRaises(ValueError):
+                    apply_mutation(candidate, vector["mutation"])
 
 
 if __name__ == "__main__":

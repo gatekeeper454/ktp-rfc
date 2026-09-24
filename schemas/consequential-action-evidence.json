@@ -18,6 +18,91 @@
     "signature"
   ],
   "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "evidence_state": {
+            "const": "withheld"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "target_marker": {
+            "properties": {
+              "kind": {
+                "const": "non_dispatch"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "evidence_state": {
+            "const": "dispatched"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "target_marker": {
+            "properties": {
+              "kind": {
+                "const": "dispatch"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "evidence_state": {
+            "const": "effect_confirmed"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "target_marker": {
+            "properties": {
+              "kind": {
+                "const": "effect"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "evidence_state": {
+            "const": "unknown"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "target_marker": {
+            "properties": {
+              "kind": {
+                "enum": [
+                  "non_dispatch",
+                  "dispatch"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
   "properties": {
     "artifact_type": {
       "const": "ktp-consequential-action-evidence-v1"
@@ -115,11 +200,26 @@
       }
     },
     "target_marker": {
-      "type": "string",
-      "minLength": 15,
-      "maxLength": 512,
-      "pattern": "^target-effect:[A-Za-z0-9][A-Za-z0-9._-]*$(?![\\s\\S])",
-      "description": "Target-specific correlation marker. It is not an HTTP status, response code, transport result, or actual target-effect proof."
+      "type": "object",
+      "required": [
+        "kind",
+        "value"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "non_dispatch",
+            "dispatch",
+            "effect"
+          ],
+          "description": "Marker semantics: non_dispatch is not-dispatch evidence, dispatch is a delivery indication, and effect is an effect-observation claim subject to semantic verification."
+        },
+        "value": {
+          "$ref": "#/$defs/literal",
+          "description": "Literal target-specific correlation marker. It is not an HTTP status, response code, or generic transport result."
+        }
+      }
     },
     "signature": {
       "type": "string",

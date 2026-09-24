@@ -15,7 +15,10 @@
       "interval_end": 101,
       "provenance_digest": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
     },
-    "target_marker": "target-effect:test-marker",
+    "target_marker": {
+      "kind": "non_dispatch",
+      "value": "test-non-dispatch-marker"
+    },
     "recorder_evidence_digest": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
     "signature": "YQ.Yg.Yw"
   },
@@ -103,6 +106,93 @@
         ],
         "operation": "set",
         "value": "not-a-jws"
+      }
+    },
+    {
+      "id": "J08-withheld-shape",
+      "expect": {
+        "schemaValid": true
+      }
+    },
+    {
+      "id": "J09-dispatched-shape",
+      "expect": {
+        "schemaValid": true
+      },
+      "mutations": [
+        {
+          "path": [
+            "evidence_state"
+          ],
+          "operation": "set",
+          "value": "dispatched"
+        },
+        {
+          "path": [
+            "target_marker",
+            "kind"
+          ],
+          "operation": "set",
+          "value": "dispatch"
+        }
+      ]
+    },
+    {
+      "id": "J10-effect-confirmed-shape",
+      "expect": {
+        "schemaValid": true
+      },
+      "mutations": [
+        {
+          "path": [
+            "evidence_state"
+          ],
+          "operation": "set",
+          "value": "effect_confirmed"
+        },
+        {
+          "path": [
+            "target_marker",
+            "kind"
+          ],
+          "operation": "set",
+          "value": "effect"
+        }
+      ]
+    },
+    {
+      "id": "J11-unknown-shape",
+      "expect": {
+        "schemaValid": true
+      },
+      "mutations": [
+        {
+          "path": [
+            "evidence_state"
+          ],
+          "operation": "set",
+          "value": "unknown"
+        },
+        {
+          "path": [
+            "target_marker",
+            "kind"
+          ],
+          "operation": "set",
+          "value": "dispatch"
+        }
+      ]
+    }
+  ],
+  "mutationValidationVectors": [
+    {
+      "id": "M01-unsupported-operation",
+      "mutation": {
+        "path": [
+          "evidence_state"
+        ],
+        "operation": "replace",
+        "value": "unknown"
       }
     }
   ]
