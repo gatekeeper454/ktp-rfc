@@ -22,17 +22,23 @@ The enforcer MUST release only the action and destination that the consumed deci
 
 ## Replay and retry contract
 
+Queue exit MUST trigger fresh validation; permission at enqueue time does not carry forward. Continuing operations MUST declare checkpoints and a bounded safe transition when authority is lost. The target contract MUST declare conditional commit/version-check atomicity, its covered effects and race boundaries. A target without that capability MUST NOT be described as providing commit-time authorization guarantees.
+
 Each consequential request MUST have a durable request identity and a canonical fingerprint of the complete release-relevant request. The identity and fingerprint MUST survive process restart, retry, failover, and reconciliation. A repeated request with the same identity and a different canonical body MUST be rejected; an implementation MUST NOT treat it as a retry, rewrite the stored body, or issue a second release.
 
 A retry MUST use the same durable identity, canonical fingerprint, target/destination binding, and consumed decision binding. A retry that cannot establish those equalities is a new candidate and MUST be withheld pending fresh evaluation. Retrying an uncertain outcome MUST NOT presume either non-dispatch or effect confirmation.
 
 ## Effect-budget contract
 
+The installed environment MUST declare the replay domain, identity retention window, recovery/replica boundary and target idempotency contract. A duplicate or uncertain response MUST NOT authorize another invocation by generating a new transport identity. Target idempotency claims require a pinned tested target contract and retention window; no universal exactly-once guarantee is offered. Proof renewal may update the consumed decision after fresh evaluation, but MUST preserve the durable operation identity and unresolved dispatch/reservation state.
+
 Where a deployment declares a shared effect budget, it MUST declare consequence units and scoped maxima for each budget scope. Before release, the enforcer MUST make a conservative reservation and MUST read sufficiently current shared budget state before accepting that reservation. The capacity read and reservation MUST bind the same declared consequence units, scoped maxima, budget scope, action scope, and actual target/destination as the action being released. An unavailable, stale, ambiguous, conflicting, or insufficient capacity read MUST withhold the action.
 
 Aggregate reservation authority MUST atomically apply a reservation against the shared limit across every actor, resource, and replica in the declared budget scope. Distinct request, actor, resource, or replica identities MUST NOT evade a shared limit. Reservations MUST remain durable until they are reconciled to a restrictive outcome. An implementation MUST NOT double-spend a reservation through concurrent requests, retries, restart, failover, or a changed request body. This contract defines this atomicity requirement but does not define a budget formula, storage system, coordination protocol, or a shared-load scalar in #124.
 
 ## Evidence contract
+
+Budget reservations MUST reduce the available capacity E used to evaluate the next request in the same scope; checking only whether a later request overflows is insufficient. Maximum target effects and consequence units MUST be declared. Trust Score, successful execution, proof refresh, restart and retry MUST NOT replenish reservations by themselves. Uncertain effects retain conservative reservations until accountable, authenticated reconciliation establishes their actual disposition.
 
 For this contract, the only execution/effect evidence states are `withheld`, `dispatched`, `effect_confirmed`, and `unknown`.
 
@@ -49,6 +55,8 @@ Reconciliation MUST run across restart, retry, failover, and restoration. It MUS
 
 The eventual conformance suite MUST contain deterministic fixtures for release-time revalidation, changed-body rejection, retry identity preservation, conservative shared reservation, unavailable capacity state, each of the four evidence states, and restart reconciliation. A vector runner MAY validate declared fixture shape and the stated expected properties. It MUST NOT claim to execute a real target, prove a real-world effect, or establish runtime certification.
 
+The proposed [suite](conformance/consequential-action-execution-v1.json) publishes 20 modeled contract vectors and 11 schema vectors. `scripts/test-consequential-action-evidence.py` checks contract-fixture integrity and schema mutations only. A declaring implementation must separately report each expected/actual semantic outcome against immutable implementation and suite pins; passing this repository's integrity runner does not execute those semantics.
+
 Passing every released vector means only that an implementation satisfies the explicit expectations of those vectors. It does not certify a target product, a deployment, an effect-budget backend, KAG, KIL, or any runtime environment. A vector suite or schema is not released merely because this proposal names it.
 
 ## Compatibility and provenance (informative)
@@ -56,3 +64,5 @@ Passing every released vector means only that an implementation satisfies the ex
 This proposal is additive and opt-in. Existing `v2.1.0` conformant implementations remain conformant without it. Adoption requires a separately approved release that identifies its exact specification, schema, and vector revisions; this proposal does not change a KTP release, DOI, or core contract.
 
 The [KIL evidence gate #130](https://github.com/nmcitra/ktp-rfc/issues/130) is independent. It concerns an accessible, pinned, reproducible release and evidence boundary; it does not adopt this proposal or turn any implementation into a reference implementation. Provenance for an eventual implementation, vector suite, and release belongs in their separately published records.
+
+Proposed by Mike Storm; text edited by Codex for Mike Storm following Chris Perkins's guidance. KAG is Mike Storm's named implementation path, with no qualified accessible release or conformance run cited here. Classification and compatibility remain proposed pending maintainer review; if existing conformant implementations acquire new mandatory obligations, reclassify under VERSIONING with migration.

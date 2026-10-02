@@ -39,6 +39,22 @@ def apply_mutation(value, mutation):
 
 
 class ConsequentialActionEvidenceTests(unittest.TestCase):
+    def test_contract_fixture_integrity(self):
+        vectors = SUITE["vectors"]
+        self.assertTrue(vectors)
+        self.assertEqual(len(vectors), len({v["id"] for v in vectors}))
+        required = {"allow", "expired_queue", "scope_change", "destination_change",
+                    "target_version_change", "same_id_replay", "same_id_changed_body",
+                    "shared_budget", "recorder_failure", "crash_before_dispatch",
+                    "crash_after_dispatch", "lost_reply", "unknown_effect", "restart"}
+        self.assertTrue(required <= {v["case"] for v in vectors})
+        for vector in vectors:
+            with self.subTest(vector=vector["id"]):
+                self.assertIsInstance(vector["request"], dict)
+                self.assertTrue(vector["request"])
+                self.assertIsInstance(vector["expect"], dict)
+                self.assertTrue(vector["expect"])
+
     def test_schema_definition(self):
         Draft202012Validator.check_schema(SCHEMA)
 

@@ -1,4 +1,260 @@
 {
+  "profile": "consequential-action-execution-v1",
+  "note": "Proposal, unreleased. Fixed modeled contract vectors. Expected fields are obligations for a declaring implementation; this repository runner checks fixture integrity and schema shape, not target execution or semantic implementation conformance.",
+  "vectors": [
+    {
+      "id": "E01",
+      "case": "allow",
+      "request": {
+        "authorizationCurrent": true,
+        "bindingsCurrent": true,
+        "reservation": "accepted",
+        "dispatchObserved": true
+      },
+      "expect": {
+        "releaseAllowed": true,
+        "evidenceState": "dispatched",
+        "reservationRetained": true
+      }
+    },
+    {
+      "id": "E02",
+      "case": "expired_queue",
+      "request": {
+        "proofExpiredAtQueueExit": true,
+        "nonDispatchAuthenticated": true
+      },
+      "expect": {
+        "releaseAllowed": false,
+        "evidenceState": "withheld"
+      }
+    },
+    {
+      "id": "E03",
+      "case": "scope_change",
+      "request": {
+        "parametersMatch": false,
+        "nonDispatchAuthenticated": true
+      },
+      "expect": {
+        "releaseAllowed": false,
+        "evidenceState": "withheld"
+      }
+    },
+    {
+      "id": "E04",
+      "case": "destination_change",
+      "request": {
+        "destinationMatch": false,
+        "nonDispatchAuthenticated": true
+      },
+      "expect": {
+        "releaseAllowed": false,
+        "evidenceState": "withheld"
+      }
+    },
+    {
+      "id": "E05",
+      "case": "target_version_change",
+      "request": {
+        "targetVersionMatch": false,
+        "conditionalCommitSupported": true
+      },
+      "expect": {
+        "releaseAllowed": false,
+        "evidenceState": "unknown"
+      }
+    },
+    {
+      "id": "E06",
+      "case": "same_id_replay",
+      "request": {
+        "sameIdentity": true,
+        "sameFingerprint": true,
+        "priorDispatch": true
+      },
+      "expect": {
+        "additionalInvocationAllowed": false,
+        "reservationRetained": true
+      }
+    },
+    {
+      "id": "E07",
+      "case": "same_id_changed_body",
+      "request": {
+        "sameIdentity": true,
+        "sameFingerprint": false
+      },
+      "expect": {
+        "additionalInvocationAllowed": false,
+        "identityCollision": true
+      }
+    },
+    {
+      "id": "E08",
+      "case": "shared_budget",
+      "request": {
+        "scopeLimit": 10,
+        "firstReservation": 6,
+        "secondRequestIdentity": "different",
+        "secondRequested": 6,
+        "atomicAuthority": true
+      },
+      "expect": {
+        "secondReleaseAllowed": false,
+        "remainingCapacityUnits": 4
+      }
+    },
+    {
+      "id": "E09",
+      "case": "budget_state_unavailable",
+      "request": {
+        "budgetStateAvailable": false,
+        "nonDispatchAuthenticated": true
+      },
+      "expect": {
+        "releaseAllowed": false,
+        "evidenceState": "withheld"
+      }
+    },
+    {
+      "id": "E10",
+      "case": "recorder_failure",
+      "request": {
+        "requiredRecorderAvailable": false,
+        "nonDispatchAuthenticated": false
+      },
+      "expect": {
+        "releaseAllowed": false,
+        "evidenceState": "unknown"
+      }
+    },
+    {
+      "id": "E11",
+      "case": "crash_before_dispatch",
+      "request": {
+        "durableReservation": true,
+        "dispatchIntent": true,
+        "nonDispatchAuthenticated": false
+      },
+      "expect": {
+        "evidenceState": "unknown",
+        "retryAllowed": false,
+        "reservationRetained": true
+      }
+    },
+    {
+      "id": "E12",
+      "case": "crash_after_dispatch",
+      "request": {
+        "dispatchAuthenticated": true,
+        "targetOutcomeAvailable": false
+      },
+      "expect": {
+        "evidenceState": "dispatched",
+        "retryAllowed": false,
+        "reservationRetained": true
+      }
+    },
+    {
+      "id": "E13",
+      "case": "lost_reply",
+      "request": {
+        "responseLost": true,
+        "targetEffectAuthenticated": true
+      },
+      "expect": {
+        "evidenceState": "effect_confirmed",
+        "retryAllowed": false
+      }
+    },
+    {
+      "id": "E14",
+      "case": "unknown_effect",
+      "request": {
+        "conflictingEvidence": true
+      },
+      "expect": {
+        "evidenceState": "unknown",
+        "retryAllowed": false,
+        "reservationRetained": true
+      }
+    },
+    {
+      "id": "E15",
+      "case": "restart",
+      "request": {
+        "restorationCurrent": false,
+        "reservationPreviouslyUncertain": true
+      },
+      "expect": {
+        "releaseAllowed": false,
+        "retryAllowed": false,
+        "reservationRetained": true,
+        "evidenceState": "unknown"
+      }
+    },
+    {
+      "id": "E16",
+      "case": "denial_only",
+      "request": {
+        "decisionDenied": true,
+        "nonDispatchAuthenticated": false
+      },
+      "expect": {
+        "evidenceState": "unknown"
+      }
+    },
+    {
+      "id": "E17",
+      "case": "authenticated_non_dispatch",
+      "request": {
+        "decisionDenied": true,
+        "nonDispatchAuthenticated": true,
+        "coverageComplete": true,
+        "intervalBound": true
+      },
+      "expect": {
+        "evidenceState": "withheld"
+      }
+    },
+    {
+      "id": "E18",
+      "case": "http_status_only",
+      "request": {
+        "httpStatus": 200,
+        "targetEffectAuthenticated": false,
+        "dispatchAuthenticated": false
+      },
+      "expect": {
+        "evidenceState": "unknown"
+      }
+    },
+    {
+      "id": "E19",
+      "case": "fresh_proof_uncertain_effect",
+      "request": {
+        "proofRefreshed": true,
+        "priorEffectUncertain": true
+      },
+      "expect": {
+        "retryAllowed": false,
+        "reservationRetained": true
+      }
+    },
+    {
+      "id": "E20",
+      "case": "continuing_authority_loss",
+      "request": {
+        "checkpointAuthorizationCurrent": false,
+        "safeTransitionDeclared": true
+      },
+      "expect": {
+        "continueOriginalAllowed": false,
+        "safeTransitionRequired": true
+      }
+    }
+  ],
   "schemaFixtureNote": "Synthetic shape-only fixture. Digest strings and JWS segments are placeholders, not verified digests, a valid signature, authenticated observation, authorization, non-dispatch coverage, or actual target effect. It must never be used as authority. schemaVectors apply each isolated mutation to a fresh copy; omitted mutation means unchanged.",
   "schemaFixture": {
     "artifact_type": "ktp-consequential-action-evidence-v1",
