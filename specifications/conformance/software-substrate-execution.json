@@ -33,7 +33,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -43,7 +45,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -111,7 +113,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -121,7 +125,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -187,7 +191,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -197,7 +203,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -263,7 +269,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -273,7 +281,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -334,7 +342,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -344,7 +354,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -405,7 +415,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -415,7 +427,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -476,7 +488,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -486,7 +500,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -547,7 +561,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -557,7 +573,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -618,7 +634,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -628,7 +646,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -689,7 +707,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -699,7 +719,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -760,7 +780,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -770,7 +792,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -831,7 +853,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -841,7 +865,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -902,7 +926,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -912,7 +938,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -973,7 +999,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -983,7 +1011,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -1044,7 +1072,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -1054,7 +1084,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -1115,7 +1145,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -1125,7 +1157,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -1186,7 +1218,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -1196,7 +1230,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -1257,7 +1291,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -1267,7 +1303,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -1328,7 +1364,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -1338,7 +1376,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -1399,7 +1437,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -1409,7 +1449,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -1470,7 +1510,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -1480,7 +1522,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -1541,7 +1583,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100500,
           "observedAtMs": 99500,
@@ -1551,7 +1595,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -1613,7 +1657,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 100001,
@@ -1623,7 +1669,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -1685,7 +1731,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -1695,7 +1743,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -1756,7 +1804,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -1766,7 +1816,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -1827,7 +1877,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -1837,7 +1889,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -1898,7 +1950,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -1908,7 +1962,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -1969,7 +2023,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -1979,7 +2035,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": false,
             "supervision": "assisted",
             "ceilings": {
@@ -2045,7 +2101,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -2116,7 +2174,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -2126,7 +2186,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -2188,7 +2248,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -2198,7 +2260,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -2259,7 +2321,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -2269,7 +2333,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -2330,7 +2394,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -2340,7 +2406,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -2408,7 +2474,9 @@
             "resourcePressure": 0.8,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -2418,7 +2486,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -2486,7 +2554,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -2496,7 +2566,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -2562,7 +2632,9 @@
             "resourcePressure": 0.1,
             "controlLatencyMs": 10,
             "irreversibility": 0.1,
-            "novelty": 0
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": true
           },
           "nowMs": 100000,
           "observedAtMs": 99500,
@@ -2572,7 +2644,7 @@
           "decisionExpiresAtMs": 100500,
           "candidateEnvelope": {
             "autonomyDemand": 0.2,
-            "environmentalCapacity": 1.0,
+            "environmentalCapacity": 1,
             "capacityKnown": true,
             "supervision": "stable",
             "ceilings": {
@@ -2619,6 +2691,166 @@
           "effectBytes": 0,
           "affectedObjects": 0,
           "fanoutTargets": 0
+        }
+      }
+    },
+    {
+      "id": "S37-repair-capacity-monotonic",
+      "note": "Only the authenticated capacity-condition value repairPathVerified worsens from true to false; E cannot rise and the result cannot loosen. Other establishment/status fixtures stay satisfied. Modeled inputs are not cryptographic or live availability evidence.",
+      "request": {
+        "resource": "software:///test-object",
+        "action": "replace",
+        "softwareContext": {
+          "magnitudes": {
+            "effectBytes": 1024,
+            "affectedObjects": 1,
+            "fanoutTargets": 1
+          },
+          "conditions": {
+            "resourcePressure": 0.1,
+            "controlLatencyMs": 10,
+            "irreversibility": 0.1,
+            "novelty": 0,
+            "repairPathVerified": false,
+            "supervisionAvailable": true
+          },
+          "nowMs": 100000,
+          "observedAtMs": 99500,
+          "maxAgeMs": 1000,
+          "proofIssuedAtMs": 99000,
+          "proofExpiresAtMs": 109000,
+          "decisionExpiresAtMs": 100500,
+          "candidateEnvelope": {
+            "autonomyDemand": 0.2,
+            "environmentalCapacity": 1,
+            "capacityKnown": true,
+            "supervision": "stable",
+            "ceilings": {
+              "effectBytes": 1024,
+              "affectedObjects": 1,
+              "fanoutTargets": 1
+            }
+          },
+          "existingSupervision": "stable",
+          "existingCeilings": {
+            "effectBytes": 1024,
+            "affectedObjects": 1,
+            "fanoutTargets": 1
+          },
+          "trustedFixtures": {
+            "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
+            "signatureVerified": true,
+            "requestMatches": true,
+            "destinationMatches": true,
+            "authorityClassMatches": true,
+            "proofMatches": true,
+            "profileMatches": true,
+            "policyMatches": true,
+            "evidenceMatches": true,
+            "prerequisitesCurrent": true,
+            "epochCurrent": true,
+            "sourceAuthenticated": true,
+            "sourceHealthy": true,
+            "sequenceCurrent": true,
+            "trustedTime": true,
+            "restrictionContinuity": true,
+            "unresolvedRestriction": false,
+            "revoked": false,
+            "scaleMatches": true
+          }
+        }
+      },
+      "expect": {
+        "compareTo": "S01-current-bound-action",
+        "environmentalCapacityNotGreaterThanCompared": true,
+        "decisionNotLooserThan": "allow",
+        "supervisionAtLeast": "stable",
+        "tightenedAtMost": {
+          "effectBytes": 1024,
+          "affectedObjects": 1,
+          "fanoutTargets": 1
+        }
+      }
+    },
+    {
+      "id": "S38-supervision-capacity-monotonic",
+      "note": "Only the authenticated capacity-condition value supervisionAvailable worsens from true to false; E cannot rise and the result cannot loosen. Other establishment/status fixtures stay satisfied. Modeled inputs are not cryptographic or live availability evidence.",
+      "request": {
+        "resource": "software:///test-object",
+        "action": "replace",
+        "softwareContext": {
+          "magnitudes": {
+            "effectBytes": 1024,
+            "affectedObjects": 1,
+            "fanoutTargets": 1
+          },
+          "conditions": {
+            "resourcePressure": 0.1,
+            "controlLatencyMs": 10,
+            "irreversibility": 0.1,
+            "novelty": 0,
+            "repairPathVerified": true,
+            "supervisionAvailable": false
+          },
+          "nowMs": 100000,
+          "observedAtMs": 99500,
+          "maxAgeMs": 1000,
+          "proofIssuedAtMs": 99000,
+          "proofExpiresAtMs": 109000,
+          "decisionExpiresAtMs": 100500,
+          "candidateEnvelope": {
+            "autonomyDemand": 0.2,
+            "environmentalCapacity": 1,
+            "capacityKnown": true,
+            "supervision": "stable",
+            "ceilings": {
+              "effectBytes": 1024,
+              "affectedObjects": 1,
+              "fanoutTargets": 1
+            }
+          },
+          "existingSupervision": "stable",
+          "existingCeilings": {
+            "effectBytes": 1024,
+            "affectedObjects": 1,
+            "fanoutTargets": 1
+          },
+          "trustedFixtures": {
+            "ordinaryAuthorization": true,
+            "repairPathVerified": true,
+            "supervisionAvailable": true,
+            "signatureVerified": true,
+            "requestMatches": true,
+            "destinationMatches": true,
+            "authorityClassMatches": true,
+            "proofMatches": true,
+            "profileMatches": true,
+            "policyMatches": true,
+            "evidenceMatches": true,
+            "prerequisitesCurrent": true,
+            "epochCurrent": true,
+            "sourceAuthenticated": true,
+            "sourceHealthy": true,
+            "sequenceCurrent": true,
+            "trustedTime": true,
+            "restrictionContinuity": true,
+            "unresolvedRestriction": false,
+            "revoked": false,
+            "scaleMatches": true
+          }
+        }
+      },
+      "expect": {
+        "compareTo": "S01-current-bound-action",
+        "environmentalCapacityNotGreaterThanCompared": true,
+        "decisionNotLooserThan": "allow",
+        "supervisionAtLeast": "stable",
+        "tightenedAtMost": {
+          "effectBytes": 1024,
+          "affectedObjects": 1,
+          "fanoutTargets": 1
         }
       }
     }

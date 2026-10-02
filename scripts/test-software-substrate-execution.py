@@ -35,6 +35,26 @@ def apply_mutation(value, mutation):
 
 
 class SoftwareSubstrateExecutionTests(unittest.TestCase):
+    def test_capacity_input_pairs_are_isolated(self):
+        vectors = {v["id"]: v for v in SUITE["vectors"]}
+        self.assertEqual(len(vectors), 38)
+        self.assertEqual(len(vectors), len(SUITE["vectors"]))
+        baseline = vectors["S01-current-bound-action"]
+        for name, field in (
+            ("S37-repair-capacity-monotonic", "repairPathVerified"),
+            ("S38-supervision-capacity-monotonic", "supervisionAvailable"),
+        ):
+            with self.subTest(vector=name):
+                pair = vectors[name]
+                expected_request = copy.deepcopy(baseline["request"])
+                conditions = expected_request["softwareContext"]["conditions"]
+                self.assertIs(conditions[field], True)
+                conditions[field] = False
+                self.assertEqual(pair["request"], expected_request)
+                self.assertEqual(pair["expect"]["compareTo"], baseline["id"])
+                self.assertEqual(pair["expect"]["decisionNotLooserThan"], "allow")
+                self.assertIs(pair["expect"]["environmentalCapacityNotGreaterThanCompared"], True)
+
     def test_schema_definition(self):
         Draft202012Validator.check_schema(SCHEMA)
 
