@@ -1,6 +1,6 @@
 # Consequential-action execution and evidence
 
-**Status: proposal; not adopted or released.** Decision: [#129](https://github.com/nmcitra/ktp-rfc/issues/129), D-011. Release baseline: **KTP `v2.1.0`**. This is an additive, opt-in contract. It has no independent release number, tag, or DOI, and it makes no change to KTP core. Published 2026-09-18 · MINOR · floor 2026-10-09 · review-by 2026-10-30.
+**Status: proposal; not adopted or released.** Decision: [#129](https://github.com/nmcitra/ktp-rfc/issues/129); decision-record assignment remains maintainer-owned. Release baseline: **KTP `v2.1.0`**. This is an additive, opt-in contract. It has no independent release number, tag, or DOI, and it makes no change to KTP core. Published 2026-09-18 · MINOR · floor 2026-10-09 · review-by 2026-10-30.
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHOULD", "SHOULD NOT", and "MAY" are to be interpreted as described in BCP 14 (RFC 2119 and RFC 8174).
 
@@ -26,7 +26,7 @@ Queue exit MUST trigger fresh validation; permission at enqueue time does not ca
 
 Each consequential request MUST have a durable request identity and a canonical fingerprint of the complete release-relevant request. The identity and fingerprint MUST survive process restart, retry, failover, and reconciliation. A repeated request with the same identity and a different canonical body MUST be rejected; an implementation MUST NOT treat it as a retry, rewrite the stored body, or issue a second release.
 
-A retry MUST use the same durable identity, canonical fingerprint, target/destination binding, and consumed decision binding. A retry that cannot establish those equalities is a new candidate and MUST be withheld pending fresh evaluation. Retrying an uncertain outcome MUST NOT presume either non-dispatch or effect confirmation.
+A retry MUST preserve the durable identity, canonical operation fingerprint and target/destination binding. Any renewed consumed decision MUST be freshly validated and correlated with that same operation history. A retry that cannot establish this continuity MUST be withheld pending reconciliation and fresh evaluation. Retrying an uncertain outcome MUST NOT presume either non-dispatch or effect confirmation.
 
 ## Effect-budget contract
 
